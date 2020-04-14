@@ -28,11 +28,10 @@ public class MovieCatalogResource {
         //get all rated movieId's and ratings by a particular user
         UserRatings userRatings = restTemplate.getForObject("http://ratings-data-service/ratingsdata/users/" + userId, UserRatings.class);
 
-
         //get movie descriptions from movie-info-service
         for (Rating rating : userRatings.getRatings()){
             Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
-            catalogItems.add(new CatalogItem(movie.getName(), "Test", rating.getRating()));
+            catalogItems.add(new CatalogItem(userId, movie.getMovieId(), movie.getName(), movie.getDescription(), rating.getRating()));
         }
 
         return catalogItems;

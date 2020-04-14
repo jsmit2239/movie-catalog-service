@@ -2,30 +2,50 @@ package com.jsmit2239.moviecatalogservice.models;
 
 public class CatalogItem {
 
-    private String name;
-    private String desc;
+    private String userId;
+    private String movieId;
+    private String movieName;
+    private String movieDescription;
     private int rating;
 
-    public CatalogItem(String name, String desc, int rating){
-        this.name = name;
-        this.desc = desc;
+    public CatalogItem(String userId, String movieId, String movieName, String movieDescription, int rating){
+        this.userId = userId;
+        this.movieId = movieId;
+        this.movieName = movieName;
+        this.movieDescription = movieDescription;
         this.rating = rating;
     }
 
-    public String getName() {
-        return name;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getMovieId() {
+        return movieId;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
+    }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
+    public String getMovieDescription() {
+        return movieDescription;
+    }
+
+    public void setMovieDescription(String movieDescription) {
+        this.movieDescription = movieDescription;
     }
 
     public int getRating() {
@@ -35,5 +55,6 @@ public class CatalogItem {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
 }
 
